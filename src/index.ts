@@ -41,6 +41,13 @@ export const handler = async (req: Request, res: Response) => {
 
   // Advanced mode
   const window = events.slice(offset, offset + limit);
+
+  if (window.length === 0) {
+    return res.json({
+      error: "No data available to calculate average",
+    });
+  }
+
   const average =
     window.reduce((sum, e) => sum + e.value, 0) / window.length;
 
