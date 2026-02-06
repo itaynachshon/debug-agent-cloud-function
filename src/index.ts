@@ -41,6 +41,12 @@ export const handler = async (req: Request, res: Response) => {
 
   // Advanced mode
   const window = events.slice(offset, offset + limit);
+  if (window.length === 0) {
+    return res.json({
+      average: 0, // Or some other business logic default
+    });
+  }
+
   const average =
     window.reduce((sum, e) => sum + e.value, 0) / window.length;
 
