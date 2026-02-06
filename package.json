@@ -1,0 +1,17 @@
+{
+  "name": "debug-agent-cloud-function",
+  "version": "1.0.0",
+  "description": "Cloud Function with a subtle bug for the AI debugging agent assignment",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
