@@ -39,6 +39,12 @@ export const handler = async (req: Request, res: Response) => {
     });
   }
 
+  if (limit === 0) {
+    return res.json({
+      average: null, // Or some other representation of an empty result
+    });
+  }
+
   // Advanced mode
   const window = events.slice(offset, offset + limit);
   const average =
